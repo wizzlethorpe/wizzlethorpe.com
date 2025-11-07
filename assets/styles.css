@@ -1,0 +1,62 @@
+/* Wizzlethorpe Lab – minimal, responsive styles */
+:root {
+  --bg: #0b0f13;
+  --panel: #11161d;
+  --text: #e6edf3;
+  --muted: #a9b6c3;
+  --brand: #7cc7ff;
+  --accent: #ffd166;
+  --card: #0f141a;
+  --border: #223041;
+  --link: #5eb0ff;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 85% -10%, #17324b 0%, rgba(23,50,75,0) 60%),
+              radial-gradient(1000px 700px at -10% 20%, #1a2a3a 0%, rgba(26,42,58,0) 55%),
+              linear-gradient(180deg, #0a0e12 0%, #0b0f13 100%);
+}
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.header { position: sticky; top: 0; backdrop-filter: blur(8px); background: rgba(11,15,19,0.75); border-bottom: 1px solid var(--border); z-index: 10; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+.brand img { width: 36px; height: 36px; }
+.brand-title { font-weight: 700; letter-spacing: 0.3px; }
+.nav a { color: var(--muted); text-decoration: none; margin-left: 18px; font-weight: 600; }
+.nav a:hover { color: var(--text); }
+
+/* Hero */
+.hero { padding: 56px 0 24px; text-align: center; }
+.hero .portrait { width: 220px; height: 220px; border-radius: 16px; overflow: hidden; margin: 0 auto 18px; border: 1px solid var(--border); background: var(--card); }
+.hero .portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hero h1 { font-size: 46px; line-height: 1.1; margin: 6px 0 10px; }
+.hero p { max-width: 720px; margin: 0 auto; color: var(--muted); }
+.cta-row { margin-top: 18px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.button { appearance: none; border: 1px solid var(--border); background: #111720; color: var(--text); padding: 10px 14px; border-radius: 10px; text-decoration: none; font-weight: 700; }
+.button.primary { background: linear-gradient(180deg,#1b2c40,#122234); border-color: #274463; box-shadow: inset 0 1px 0 rgba(255,255,255,0.05); }
+.button:hover { filter: brightness(1.08); }
+
+/* Sections */
+.section { padding: 26px 0; border-top: 1px solid var(--border); }
+.section h2 { margin: 0 0 10px; font-size: 26px; }
+.section p { color: var(--muted); }
+.twocol { display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 820px) { .twocol { grid-template-columns: 1fr 1fr; } }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
+
+/* Product cards */
+.products { display: grid; grid-template-columns: 1fr; gap: 16px; }
+@media (min-width: 720px) { .products { grid-template-columns: repeat(2, 1fr); } }
+.product .title { display: flex; align-items: center; justify-content: space-between; }
+.badge { background: rgba(124,199,255,0.12); border: 1px solid #274463; color: var(--brand); padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+.links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+
+/* Footer */
+.footer { padding: 26px 0 50px; color: var(--muted); text-align: center; border-top: 1px solid var(--border); }
+.footer a { color: var(--link); text-decoration: none; }
